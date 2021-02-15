@@ -1,5 +1,7 @@
 package code
 
 object Main extends App {
-  println("Hello world!")
+  case class Driver(stops:List[Int]) {
+
+  }
 }
