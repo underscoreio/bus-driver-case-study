@@ -1,15 +1,20 @@
 package code
 
-object GossipFinder extends App {
+case class Driver(id: Int, stops: List[Int], gossipReceivedFrom: Set[Int]) {
+  def hasReceivedGossipFromAll(numberOfDrivers: Int) = gossipReceivedFrom.size == numberOfDrivers - 1
 
-  val drivers: Seq[Driver] = Seq()
-
-  case class Driver(id:Int, stops:List[Int], ) {
-
+  def getStopForCurrentIteration(index: Int) : Int = {
+    stops(index % stops.length)
   }
 
-def findGossip(drivers:Seq[Driver]):Option[Int] = {
-  None
 }
 
+object GossipFinder extends App {
+
+  def findGossip(drivers: Seq[Driver]): Option[Int]
+  =
+  {
+//    val numberOfDrivers = drivers.size(1 to 480).foreach(index => {}) None
+    ???
+  }
 }
