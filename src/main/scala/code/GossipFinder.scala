@@ -1,10 +1,15 @@
 package code
 
 case class Driver(id: Int, stops: List[Int], gossipReceivedFrom: Set[Int]) {
+
   def hasReceivedGossipFromAll(numberOfDrivers: Int) = gossipReceivedFrom.size == numberOfDrivers - 1
 
   def getStopForCurrentIteration(index: Int) : Int = {
     stops(index % stops.length)
+  }
+
+  def withGossipFrom(driver: Int):Driver = {
+    this.copy(gossipReceivedFrom = this.gossipReceivedFrom + driver)
   }
 
 }
